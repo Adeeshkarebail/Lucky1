@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky1</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg bg1"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <header>
+        <img src="attached_assets/a-modern-and-professional-logo-with-a-bo_vWn1A13vSh-EJ7FJOLeBUw_ahSHtjhgThuZu1Z3YeAzIA.jpeg" alt="Lucky1 Logo" class="brand-logo">
+        <h1>🎯 Lucky1 🎲</h1>
+        <p>🏆 Bet on your favorite team and win big! 💰</p>
+    </header>
+    <div class="container">
+        <!-- User Login Section -->
+        <div id="login-section">
+            <h2>Login to Play</h2>
+            <input type="text" id="name" placeholder="Enter Your Name">
+            <input type="tel" id="mobile" placeholder="Enter Mobile Number" maxlength="10">
+            <button class="liquid" onclick="login()">Login</button>
+        </div>
+        <!-- Game Section (Hidden Initially) -->
+        <div id="game-section" class="hidden">
+            <div id="teams">
+                <h3>Match: <span id="team1">Team A</span> vs <span id="team2">Team B</span></h3>
+            </div>
+            <h2>Pick Your Number</h2>
+            <div id="numbers"></div>
+            <!-- Payment Section (Hidden Initially) -->
+            <div id="numbers-control">
+                <button onclick="resetSelection()" class="reset-btn">Reset Selection</button>
+            </div>
+            <div id="payment-section" class="hidden">
+                <h3>Pay ₹20 via UPI</h3>
+                <img id="qr-code" src="attached_assets/Screenshot_2025-03-27-18-02-57-64_6012fa4d4ddec268fc5c7112cbb265e7.jpg" alt="Google Pay QR Code">
+                <p class="whatsapp-note">After payment, tap 'Submit Bet' below. You'll be prompted to send your payment screenshot via WhatsApp.</p>
+                <button class="liquid" onclick="submitBet()">Submit Bet</button>
+            </div>
+            <!-- Winner Section (Hidden Initially) -->
+            <div id="winner-section" class="hidden">
+                <h3>Winner Announcement</h3>
+                <p>Winning Team: <span id="winning-team">TBD</span></p>
+                <p>Winning Number: <span id="winning-number">TBD</span></p>
+                <p>Join our WhatsApp channel for updates:</p>
+                <a id="whatsapp-link" href="https://chat.whatsapp.com/Llpk9VH8Hxw53bKQ9t1Rbm" target="_blank">Join WhatsApp Channel</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Lucky1. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

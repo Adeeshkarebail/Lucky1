@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    background: #1a1a1a;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25px 25px, rgba(0, 255, 204, 0.05) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(255, 0, 122, 0.05) 2%, transparent 0%);
+    background-size: 100px 100px;
+    opacity: 0.5;
+}
+
+.bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 255, 204, 0.1) 0%, rgba(255, 0, 122, 0.1) 100%);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.brand-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    background: linear-gradient(45deg, #00ffcc, #ff007a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: slideUp 0.8s ease-in-out;
+}
+
+h2, h3 {
+    color: #00ffcc;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: #333;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #00ffcc;
+}
+
+button {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(45deg, #00ffcc 30%, #00b3cc 90%);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    display: block;
+}
+
+button.liquid {
+    background: linear-gradient(#00ffcc 0 0) no-repeat calc(200% - var(--p, 0%)) 100% / 200% var(--p, 0.2em);
+    transition: 0.3s var(--t, 0s), background-position 0.3s calc(0.3s - var(--t, 0s));
+}
+
+button.liquid:hover {
+    --p: 100%;
+    --t: 0.3s;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 255, 204, 0.3);
+}
+
+button.liquid:active {
+    transform: translateY(1px);
+}
+
+.container {
+    backdrop-filter: blur(10px);
+    background: rgba(26, 26, 26, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    backdrop-filter: blur(5px);
+    background: rgba(51, 51, 51, 0.8);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
+}
+
+
+.hidden {
+    display: none;
+}
+
+#teams {
+    margin: 15px 0;
+    background: #222;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#numbers {
+    margin: 20px 0;
+}
+
+#numbers p {
+    color: #00ffcc;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.team-status {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.team-status p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.number-btn {
+    width: 60px;
+    height: 60px;
+    margin: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ffcc, #00b3cc);
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 255, 204, 0.3);
+    font-weight: 600;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.number-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px #00ffcc;
+}
+
+.number-btn.taken {
+    background: #ff007a;
+    cursor: not-allowed;
+}
+
+#qr-code {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: 4px solid #00ffcc;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+    display: block;
+}
+
+#payment-section {
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+.whatsapp-note {
+    color: #00ffcc;
+    font-size: 0.9rem;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #00ffcc;
+    border-radius: 5px;
+    background: rgba(0, 255, 204, 0.1);
+}
+
+#winner-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #00ffcc;
+    border-radius: 10px;
+    background: #222;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#winning-team, #winning-number {
+    color: #ff007a;
+    font-weight: 600;
+}
+
+#whatsapp-link {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: 400;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+#whatsapp-link:hover {
+    color: #ff007a;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.loading-bar {
+    width: 200px;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar::after {
+    content: '';
+    position: absolute;
+    left: -50%;
+    height: 100%;
+    width: 50%;
+    background: #00ffcc;
+    animation: loading 1s ease-in-out infinite;
+}
+
+@keyframes loading {
+    from { transform: translateX(0); }
+    to { transform: translateX(300%); }
+}
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    background: rgba(0, 255, 204, 0.9);
+    color: #1a1a1a;
+    font-weight: 500;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notification.error {
+    background: rgba(255, 0, 122, 0.9);
+    color: white;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.reset-btn {
+    background: linear-gradient(45deg, #ff007a 30%, #ff5500 90%);
+    margin-top: 15px;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#numbers-control {
+    margin: 10px 0;
+}
